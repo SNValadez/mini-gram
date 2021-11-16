@@ -1,0 +1,26 @@
+{
+  "name": "mini-gram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SNValadez/mini-gram.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SNValadez/mini-gram/issues"
+  },
+  "homepage": "https://github.com/SNValadez/mini-gram#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "handlebars": "^4.7.7",
+    "passport-google-oauth": "^2.0.0"
+  }
+}
