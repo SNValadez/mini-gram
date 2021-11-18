@@ -11,17 +11,18 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({  
-    defaultLayout: "main"
-}));
+app.engine("handlebars", exphbs.engine ({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-db.sequelize.sync().then(function() {
+app.get("/", function(req, res){
+  res.send("Hello World!")
+})
+
+sequelize.sync().then(function() {
     app.listen(PORT, function() {
       console.log(
         "=>  🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", 
