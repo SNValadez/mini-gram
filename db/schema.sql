@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS mini-gram;
+DROP DATABASE IF EXISTS mini_gram;
 
-CREATE DATABASE mini-gram;
+CREATE DATABASE mini_gram;
