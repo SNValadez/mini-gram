@@ -1,8 +1,8 @@
 const User = require('./User');
 const Post = require('./Post');
 const Category = require('./Catgory');
+const { post } = require('../controllers/api');
 
-// associations
 User.hasMany(Post, {
   foreignKey: 'user_id'
 });
