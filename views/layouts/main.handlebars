@@ -9,6 +9,33 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="">
+    <header>
+      <nav class="flex flex-wrap items-center justify-between bg-purple-default p-4">
+        <span class="font-bold text-lg">mini-gram</span>
+        <div class="">
+          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-dark hover:text-orange mr-4">
+          Docs
+          </a>
+        </div>
+        <div class="flex-auto">
+          {{#if loggedIn}}
+          <a href="/dashboard">dashboard</a>
+          <button id="logout" class="bg-transparent hover:bg-purple-default text-purple-default font-semibold hover:text-white py-2.5 px-5 border border-purple-default hover:border-transparent rounded">Logout</button>
+          {{else}}
+          <a href="/login" class="">Login</a>
+          {{/if}}
+        </div>
+        
+      </nav>
+      <main>
+      {{{ body }}}
+    </main>
+      <footer>
+      </footer>
+    </header>
+  </div>
+  
   
 </body>
 </html>
