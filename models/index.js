@@ -1,20 +1,18 @@
-const User = require('./User');
-const Post = require('./Post');
-const Category = require('./Catgory');
-const { post } = require('../controllers/api');
+const User = require("./User");
+const Category = require("./Category");
+const Post = require("./Post");
 
+module.exports = { User, Category, Post};
+
+//Associations
 User.hasMany(Post, {
-  foreignKey: 'user_id'
-});
+    foreignKey: 'user_id'
+  });
 
-Post.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'cascade'
-});
+  Post.belongsTo(User, {
+    foreignKey: 'user_id',
+  });
 
-Category.belongsTo(Post, {
-  foreignKey: 'post_id',
-  onDelete: 'cascade'
-});
-
-module.exports = { User, Post, Category};
+  Post.belongsTo(Category, {
+    foreignKey: 'category_id',
+  });
