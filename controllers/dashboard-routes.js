@@ -10,15 +10,14 @@ router.get('/', withAuth, (req, res) => {
       },
       attributes: [
         'id',
-        'content',
         'title',
-        'cateory_id',
+        'content',
         'created_at',
       ],
       include: [
         {
           model: Category,
-          attributes: ['categoryname'],
+          attributes: ['category_nme'],
         },
         {
           model: User,
@@ -36,19 +35,18 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
-  router.get('/edit/:id', withAuth, (req, res) => {
+  router.get('/edit/:id', (req, res) => {
     Post.findByPk(req.params.id, {
       attributes: [
         'id',
-        'content',
         'title',
-        'category_id',
+        'content',
         'created_at',
       ],
       include: [
         {
           model: Category,
-          attributes: ['categoryname'],
+          attributes: ['category_name'],
         },
         {
           model: User,

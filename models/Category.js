@@ -18,11 +18,10 @@ Category.init(
     },
     {
       sequelize,
-      timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'user'
+      modelName: 'category'
     }
   );
 
-module.exports = Category;
+  module.exports = Category;

@@ -1,19 +1,18 @@
 const router = require('express').Router();
-const { Post, User, Category } = require('../../models');
+const { Post, Category, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Post.findAll({
-      order: [['created_at', 'DESC']],
-      attributes: ['id', 'title', 'content', 'category_id', 'user_id', 'created_at'],
+      attributes: ['id', 'title', 'content','created_at'],
       include: [
-        {
-          model: Category,
-          attributes: ['category_name'],
-        },
         {
           model: User,
           attributes: ['username']
+        },
+        {
+          model: Category,
+          attributes: ['category_name']
         }
       ]
     })
@@ -29,16 +28,15 @@ router.get('/', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'title', 'content', 'category_id', 'user_id', 'created_at'],
-      order: [['created_at', 'DESC']], 
+      attributes: ['id', 'title', 'content','created_at'],
       include: [
-        {
-          model: Category,
-          attributes: ['category_name']
-        },
         {
           model: User,
           attributes: ['username']
+        },
+        {
+          model: Category,
+          attributes: ['category_name']
         }
       ]
     })
@@ -57,9 +55,9 @@ router.get('/', (req, res) => {
 
   router.post('/', withAuth, (req, res) => {
     Post.create({
+      category_id: req.body.category_id,
       title: req.body.title,
       content: req.body.content,
-      category_id: req.body.category_id,
       user_id: req.body.user_id
     })
       .then(dbPostData => res.json(dbPostData))
@@ -69,11 +67,12 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.put('/:id', (req, res) => {
+  router.put('/:id', withAuth, (req, res) => {
     Post.update(
       {
+        category_id: req.body.category_id,
         title: req.body.title,
-        content: req.body.content
+        content: req.body.conent
       },
       {
         where: {
@@ -94,7 +93,7 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.delete('/:id', withAuth, (req, res) => {
+  router.delete('/:id',withAuth, (req, res) => {
     Post.destroy({
       where: {
         id: req.params.id
