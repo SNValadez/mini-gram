@@ -3,11 +3,13 @@ const session = require("express-session");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const exphbs = require("express-handlebars");
+const router = express.Router();
+const homeRoutes = require("./controllers/home-routes")
 
 const passport = require("passport");
 const app = express();
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3007;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -29,11 +31,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+//app.get("/", function(req, res){
+  //res.send("Hello World!")
+//})
 
-app.get("/", function(req, res){
-  res.send("Hello World!")
-})
-
+app.use("/homeRoutes", homeRoutes);
 
 
 sequelize.sync().then(function() {
@@ -43,3 +45,5 @@ sequelize.sync().then(function() {
         PORT, PORT);
     })
   });
+
+  module.exports = router;
