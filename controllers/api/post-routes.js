@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
       order: [['created_at', 'DESC']],
       attributes: ['id', 'title', 'content', 'category_id', 'user_id', 'created_at'],
       include: [
-        // include the Comment model here:
         {
           model: Category,
           attributes: ['category_name'],
