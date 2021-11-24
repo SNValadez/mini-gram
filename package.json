@@ -35,6 +35,6 @@
     "session": "^0.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.15"
   }
 }
