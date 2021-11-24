@@ -8,22 +8,22 @@
 
   <title>Document</title>
 </head>
-<body>
-  <div class="">
+<body class="bg-purple-100">
+  <div class="font-sans">
     <header>
-      <nav class="flex flex-wrap items-center justify-between bg-purple-default p-4">
-        <span class="font-bold text-lg">mini-gram</span>
-        <div class="">
-          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-dark hover:text-orange mr-4">
-          Docs
+      <nav class="flex flex-wrap items-center justify-between bg-white shadow-md p-4">
+        <span class="font-bold text-lg text-">mini-gram</span>
+        <div class="flex-auto flex-grow w-auto">
+          <a href="#/" class="block mt-4 lg:inline-block lg:mt-0 text-base text-green-400 hover:text-green-900 mr-4">
+          Your Posts
           </a>
         </div>
         <div class="flex-auto">
           {{#if loggedIn}}
           <a href="/dashboard">dashboard</a>
-          <button id="logout" class="bg-transparent hover:bg-purple-default text-purple-default font-semibold hover:text-white py-2.5 px-5 border border-purple-default hover:border-transparent rounded">Logout</button>
+          <button id="logout" class="bg-transparent hover:bg-white text-sm text-purple-400 font-semibold hover:text-purple-900 py-2.5 px-5 border border-white rounded">Logout</button>
           {{else}}
-          <a href="/login" class="">Login</a>
+          <a href="/login" class="text-purple-400 font-semibold hover:text-purple-900">Login</a>
           {{/if}}
         </div>
         
