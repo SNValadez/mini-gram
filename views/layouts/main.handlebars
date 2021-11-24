@@ -19,17 +19,18 @@
           </a>
         </div>
         <div class="flex-auto">
-          {{#if loggedIn}}
+          {{!-- {{#if loggedIn}} --}}
           <a href="/dashboard">dashboard</a>
           <button id="logout" class="bg-transparent hover:bg-white text-sm text-purple-400 font-semibold hover:text-purple-900 py-2.5 px-5 border border-white rounded">Logout</button>
-          {{else}}
+          {{!-- {{else}} --}}
           <a href="/login" class="text-purple-400 font-semibold hover:text-purple-900">Login</a>
-          {{/if}}
+          {{!-- {{/if}} --}}
         </div>
         
       </nav>
       <main>
       {{{ body }}}
+    
     </main>
       <footer>
       </footer>

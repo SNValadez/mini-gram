@@ -1,6 +1,7 @@
 const express = require("express");
 const routes = require('./controllers'); // Wasn't here before
 const sequelize = require("./config/connection");
+const path = require("path");
 
 // express session variables
 const session = require("express-session");
@@ -17,17 +18,6 @@ const passport = require("passport");
 const app = express();
 const PORT = process.env.PORT || 3007;
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// turn on routes
-app.use(routes); //Wasn't here before
-
-// setup handlebars for frontend
-app.engine("handlebars", exphbs.engine ({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-
 app.use(session({ 
   secret: "secret",
   cookie: {},
@@ -37,8 +27,25 @@ app.use(session({
     db: sequelize
   })
 }));
+// app.use(session())
+const hbs = exphbs.create({defaultLayout: 'main'});
+  app.engine('handlebars', hbs.engine);
+app.set("view engine", "handlebars");
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, "public")));
+
+// turn on routes
+//Wasn't here before
+
+// setup handlebars for frontend
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(routes); 
+
+
 
 //app.get("/", function(req, res){
   //res.send("Hello World!")
