@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-  <title>Document</title>
+  <title>mini-gram</title>
 </head>
 <body class="bg-purple-100">
   <div class="font-sans">
@@ -19,12 +19,12 @@
           </a>
         </div>
         <div class="flex-auto">
-          {{!-- {{#if loggedIn}} --}}
+          {{#if loggedIn}}
           <a href="/dashboard">dashboard</a>
           <button id="logout" class="bg-transparent hover:bg-white text-sm text-purple-400 font-semibold hover:text-purple-900 py-2.5 px-5 border border-white rounded">Logout</button>
-          {{!-- {{else}} --}}
-          <a href="/login" class="text-purple-400 font-semibold hover:text-purple-900">Login</a>
-          {{!-- {{/if}} --}}
+          {{else}}
+          <a href="/login" class="bg-transparent hover:bg-purple-400 border-solid rounded border-2 border-purple-400 hover:border-none text-sm text-purple-400 font-semibold hover:text-white py-3 px-5">Login</a>
+          {{/if}}
         </div>
         
       </nav>
