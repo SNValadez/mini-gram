@@ -1,6 +1,6 @@
 <ol class="post-list">
   {{!-- begins loop --}}
-  {{#each posts}}
+  {{#each posts as |post|}}
   <li>
     {{> post-info post }}
   </li>

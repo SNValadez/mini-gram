@@ -1,22 +1,23 @@
-<section>
-  <h2>Create New Post</h2>
-
-  <form class="bg-">
+<div class="w-full max-w-s">
+  <form class="bg-white shadow-md px-10 py8 mb-5">
+    <h2 class="text-center text-purple-400 text-md font-bold capitalize mb-3">Create New Post</h2>
     <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label class="text-left text-grey-800 text-sm font-bold mb-2" for="post-title">Title</label>
+      <input class="text-xs w-full mb-2 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none" type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+      <label class="text-left text-grey-800 text-sm font-bold mb-2"for="post-url">Link</label>
+      <input class="text-xs w-full mb-4 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none" id="post-url" name="post-url" />
     </div>
-    <button type="submit" class="btn">Create</button>
+    <div class="flex items-center">
+      <button class="text-sm text-center bg-blue-300 text-white py-1 rounded font-medium" type="submit" class="btn">Create</button>
+    </div>
   </form>
-</section>
+</div>
 
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
+<div class="w-full max-w-s">
+  <h2 class="text-center text-purple-400 text-md font-bold capitalize mb-3">Your Posts</h2>
   <ol>
     {{#each posts as |post|}}
     <li>
@@ -25,13 +26,13 @@
     </li>
     {{/each}}
   </ol>
-</section>
+</div>
 {{else}}
-<section>
+<div class="w-full max-w-s">
   <hr>
-  <h2>Your Posts</h2>
-  <h3>No posts yet</h3>
-</section>
+  <h2 class="text-center text-purple-400 text-md font-bold capitalize mb-3">Your Posts</h2>
+  <h3 class="text-left text-grey-800 text-sm font-normal normalcase mt-6 mb-12">No posts yet</h3>
+</div>
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>
