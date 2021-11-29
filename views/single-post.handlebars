@@ -1,0 +1,24 @@
+{{> post-info post}}
+
+{{#if loggedIn}}
+<div class="full-w">
+  <div class="flex justify-center text-center text-purple-400 text-md font-bold capitalize mb-3">
+    <form class="flex-grow bg-white shadow-md px-10 py-8 mb-5">
+      <div>
+        <textarea class="text-xs w-full mb-8 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none" name="comment-body"></textarea>
+      </div>
+  
+      <div class="flex justify-center">
+        <button class="bg-purple-400 hover:bg-purple-900 text-sm text-white font-semibold  py-2.5 px-5 rounded" type="submit">Add Comment</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="../public/javascript/comment.js"></script>
+{{/if}}

@@ -1,16 +1,27 @@
 <div class="w-full max-w-s">
-  <form class="bg-white shadow-md px-10 py8 mb-5">
+  <form class="bg-white shadow-md px-10 py-8 mb-5">
     <h2 class="text-center text-purple-400 text-md font-bold capitalize mb-3">Create New Post</h2>
-    <div>
+    <div class="mb-2">
       <label class="text-left text-grey-800 text-sm font-bold mb-2" for="post-title">Title</label>
       <input class="text-xs w-full mb-2 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none" type="text" id="post-title" name="post-title" />
     </div>
-    <div>
-      <label class="text-left text-grey-800 text-sm font-bold mb-2"for="post-url">Link</label>
+    <div class="mb-2">
+      <label class="text-left text-grey-800 text-sm font-bold mb-2" for="post-url">Link</label>
       <input class="text-xs w-full mb-4 rounded border bg-gray-100 border-gray-300 px-2 py-2 focus:outline-none focus:border-gray-400 active:outline-none" id="post-url" name="post-url" />
     </div>
+    <div class="mb-6">
+      <label class="text-left text-grey-800 text-sm font-bold mb-2" for="post-category">Category</label>
+      <select class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category-list" name="category-list">
+        <option>Food</option>
+        <option>Furniture</option>
+        <option>Architecture</option>
+        <option>Homes</option>
+        <option>Dioramas</option>
+        <option>Miscellaneous</option>
+      </select>
+    </div>
     <div class="flex items-center">
-      <button class="text-sm text-center bg-blue-300 text-white py-1 rounded font-medium" type="submit" class="btn">Create</button>
+      <button class="bg-purple-400 hover:bg-white text-sm text-white hover:text-purple-900 font-semibold  py-2.5 px-5 border-purple-400 border-solid border-2 rounded"  type="submit" class="btn">Create</button>
     </div>
   </form>
 </div>
@@ -35,4 +46,4 @@
 </div>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script>
+<script src="../public/javascript/add-post.js"></script>

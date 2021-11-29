@@ -1,0 +1,19 @@
+<div class="bg-white rounded-md shadow-md overflow-hidden m-16 max-width-800 md:max-width-600 sm:max-width-200">
+  <img class="h-50 w-full object-covered" src=""></img>
+  <div class="block justify-center p-10">
+    <div class="flow-root text-center text-grey-900 capitalize mb-3">
+      <a class="block text-lg font-bold mb-2" href="{{post_url}}" target="_blank">{{title}}</a>
+      <span class="block text-md">({{format_url post_url}})</span>
+      <span class="block bg-purple-200 text-purple-800 text-sm font-medium px-3 py-2 mb-4 mt-6 rounded-lg">
+      {{post-category}}
+    </span>
+    </div>
+    
+    <div class="text-md py-4 mb-6">
+      Posted by {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="divide-y-2 divide-gray-300">
+      <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    </div>
+  </div>
+</div>

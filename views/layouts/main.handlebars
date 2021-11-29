@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../public/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../public/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../public/assets/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>mini-gram</title>
 </head>
@@ -24,22 +24,22 @@
         <div class="flex-auto">
           {{#if loggedIn}}
           <a href="/dashboard">dashboard</a>
-          <button id="logout" class="bg-transparent hover:bg-white text-sm text-purple-400 font-semibold hover:text-purple-900 py-2.5 px-5 border border-white rounded">Logout</button>
+          <button id="logout" class="bg-purple-400 hover:bg-white text-sm text-white hover:text-purple-900 font-semibold  py-2.5 px-5 border-pruple-400 border-solid border-2 rounded" >Logout</button>
           {{else}}
           <a href="/login" class="bg-transparent hover:bg-purple-400 border-solid rounded border-2 border-purple-400 hover:border-none text-sm text-purple-400 font-semibold hover:text-white py-3 px-5">Login</a>
           {{/if}}
         </div>
         
+      
       </nav>
-      <main>
+    </header>
+    <main>
       {{{ body }}}
     
     </main>
-      <footer>
-      </footer>
-    </header>
+    <footer>
+    </footer>
   </div>
-  
   
 </body>
 </html>

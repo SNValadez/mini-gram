@@ -1,0 +1,28 @@
+<div class="comments">
+  {{#each this}}
+  <section class="p-2">
+    <div class="">
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
+
+  
+<div>
+  <div class="divide-y divide-gray-2 p-2 mx-2 my-4">
+    {{#each this}}
+    <div>
+      <div class="text-sm mb-1">
+        <span class="font-bold">{{user.username}}</span> on {{format_date created_at}}
+      </div>
+      <div class="mb-1">
+        {{comment_text}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
