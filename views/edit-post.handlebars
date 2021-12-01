@@ -1,0 +1,17 @@
+<form class="bg-white shadow-md px-10 py-8 mb-5">
+  <h2 class="text-center text-purple-400 text-md font-bold capitalize mb-3">Edit Post</h2>
+  <div class=" text-grey-900 capitalize mb-3">
+    <input class="block text-lg font-bold mb-2" name="post-title" type="text" value="{{post.title}}" />
+    <span class="block text-md">({{format_url post.post_url}})</span>
+  </div>
+  <div class="flex justify-between text-sm py-4 mb-6">
+    Posted by you on {{format_date created_at}}
+  
+    <a clhref="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+  </div>
+  <div class="flex justify-end my-6">
+    <button type="submit" class="bg-purple-400 hover:bg-purple-900 text-sm text-white font-semibold  py-2.5 px-5 border-purple-400 hover:border-purple-900 border-solid border-2 rounded mx-2">Save post</button>
+  <button type="button" class="bg-transparent hover:bg-gray-900 text-sm text-gray-500 hover:text-white font-semibold  py-2.5 px-5 border-gray-400 hover:border-gray-900 border-solid border-2 rounded mx-2" >Delete post</button>
+  </div>
+  
+</form>

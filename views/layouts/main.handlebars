@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../public/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../public/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../public/assets/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>mini-gram</title>
 </head>
@@ -20,8 +20,8 @@
         <div class="flex items-center">
           <!-- {{#if loggedIn}} -->
           <div class="w-full block flex-grow w-auto">
-            <a href="/dashboard" class="block mt-4 lg:inline-block lg:mt-0 text-base text-green-400 hover:text-green-900 mr-4">Dashboard</a>
-            <a href="#/" class="block mt-4 lg:inline-block lg:mt-0 text-base text-green-400 hover:text-green-900 mr-4">Your Posts</a>
+            <a href="/dashboard" class="block mt-4 lg:inline-block lg:mt-0 text-base text-purple-400 hover:text-purple-900 mr-4">Dashboard</a>
+            <a href="#/" class="block text-purple-400 hover:text-purple-900">Your Posts</a>
           </div>
           <button id="logout" class="bg-purple-400 hover:bg-purple-900 border-solid rounded border-2 border-purple-400 hover:border-purple-900 text-sm text-white font-semibold py-2 px-5">Logout</button>
           <!-- {{else}} -->
@@ -29,15 +29,16 @@
           <!-- {{/if}} -->
         </div>
         
+      
       </nav>
-      <main>
+    </header>
+    <main>
       {{{ body }}}
     
     </main>
-      <footer>
-      </footer>
-    </header>
+    <footer>
+    </footer>
   </div>
-
+  
 </body>
 </html>
