@@ -15,23 +15,24 @@
 
   <div class="font-sans">
     <header>
-      <nav class="flex flex-wrap items-center justify-between bg-white shadow-md p-4">
+      <nav class="w-full flex justify-between bg-white shadow-md p-4">
         <span class="font-bold text-lg font-bold">mini-gram</span>
-        <div class="flex items-center">
-          <!-- {{#if loggedIn}} -->
-          <div class="w-full block flex-grow w-auto">
-            <a href="/dashboard" class="block mt-4 lg:inline-block lg:mt-0 text-base text-purple-400 hover:text-purple-900 mr-4">Dashboard</a>
-            <a href="#/" class="block text-purple-400 hover:text-purple-900">Your Posts</a>
+        <div class="flex">
+          {{#if loggedIn}}
+          <div class="flex items-center w-auto">
+            <a href="/dashboard" class="flex-1 text-purple-400 hover:text-purple-900 mx-4">Dashboard</a>
+            <a href="#/" class="flex-1 text-purple-400 hover:text-purple-900 mx-4">Your Posts</a>
           </div>
-          <button id="logout" class="bg-purple-400 hover:bg-purple-900 border-solid rounded border-2 border-purple-400 hover:border-purple-900 text-sm text-white font-semibold py-2 px-5">Logout</button>
-          <!-- {{else}} -->
-          <a href="/login" class="bg-transparent hover:bg-purple-400 border-solid rounded border-2 border-purple-400 hover:border-none text-sm text-purple-400 font-semibold hover:text-white py-2 px-5">Login</a>
-          <!-- {{/if}} -->
+          <button id="logout" class="bg-purple-400 hover:bg-purple-900 border-solid rounded border-2 border-purple-400 hover:border-purple-900 text-sm text-white font-semibold py-2 px-5 mx-4">Logout</button>
+          {{else}}
+          <a href="/login" class="bg-transparent hover:bg-purple-400 border-solid rounded border-2 border-purple-400 hover:border-none text-sm text-purple-400 font-semibold hover:text-white py-2 px-5 mx-4">Login</a>
+          {{/if}}
         </div>
         
       
       </nav>
     </header>
+    
     <main>
       {{{ body }}}
     
