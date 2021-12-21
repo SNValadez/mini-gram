@@ -1,6 +1,17 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Category } = require('../models');
+const passport = require("passport");
+
+router.get('/auth/google',
+  passport.authenticate('google', { scope: 'https://www.google.com/m8/feeds' }));
+
+
+router.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 router.get('/', (req, res) => {
     Post.findAll({
